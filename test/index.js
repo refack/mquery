@@ -476,7 +476,7 @@ describe('mquery', function(){
     })
   })
 
-  describe.skip('within', function(){
+  describe('within', function(){
     it('is chainable', function(){
       var m = mquery();
       assert.equal(m.where('a').within(), m);
@@ -596,7 +596,7 @@ describe('mquery', function(){
           mquery().box([],[]);
         }, /must be used after where/);
       })
-      it.skip('works', function(){
+      it('works', function(){
         var m = mquery().where('loc').box([1,2],[3,4]);
         assert.deepEqual(m._conditions.loc, { $geoWithin: { $box: [[1,2],[3,4]] }});
       })
@@ -1393,7 +1393,7 @@ describe('mquery', function(){
       it('when criteria is passed with a callback', function(done){
         mquery(col).find({ name: 'mquery' }, function (err, docs) {
           assert.ifError(err);
-          assert.equal(docs.length, 1);
+          assert.equal(1, docs.length);
           done();
         })
       })
